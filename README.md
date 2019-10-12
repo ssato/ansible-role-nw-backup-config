@@ -1,4 +1,4 @@
-# ssato.generate_kickstart
+# ssato.nw_backup_config
 
 This is an example ansible role to backup configuration files on network nodes.
 
