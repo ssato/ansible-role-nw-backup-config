@@ -1,0 +1,9 @@
+---
+- name: Test if the backup file exists
+  command: >-
+    test -f {{ nbc_backup_config_dir }}/{{ nbc_backup_config_filename }}
+  changed_when: false
+  when:
+    - not(nbc_dryrun)
+
+# vim:sw=2:ts=2:et:

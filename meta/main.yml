@@ -1,0 +1,30 @@
+---
+galaxy_info:
+  role_name: nw_backup_config
+  author: Satoru SATOH
+  description: Backup running configurations on network nodes
+  # company: Red Hat, Inc.
+
+  # yamllint disable-line rule:line-length
+  issue_tracker_url: https://github.com/ssato/ansible-role-nw-backup-config/issues
+  license: MIT
+
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+
+    - name: EL
+      versions:
+        - 7
+        - 8
+
+  galaxy_tags:
+    - backup
+    - networking
+
+dependencies: []
+
+# vim:sw=2:ts=2:et:

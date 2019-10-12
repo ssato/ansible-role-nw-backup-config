@@ -1,0 +1,21 @@
+---
+- name: Test variables are OK for F5 nodes
+  assert:
+    that:
+      - bigip_provider | d()
+      - bigip_provider is mapping
+      - bigip_provider.server | d()
+      - bigip_provider.server is string
+      - bigip_provider.user | d()
+      - bigip_provider.user is string
+      - bigip_provider.password | d()
+      - bigip_provider.password is string
+    fail_msg: |
+      bigip_provider: {{ bigip_provider | d() }}
+
+- name: Debug variables
+  debug:
+    var: bigip_provider
+    verbosity: 1
+
+# vim:sw=2:ts=2:et:

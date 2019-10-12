@@ -1,0 +1,13 @@
+---
+# .. note:: There is no ansible module for FortiOS like ios_command.
+
+- name: Backup config on the node
+  fortios_config:
+    host: "{{ fortios_provider.host }}"
+    username: "{{ fortios_provider.username }}"
+    password: "{{ fortios_provider.password }}"
+    backup: true
+    backup_path: "{{ nbc_backup_config_dir }}"
+    backup_filename: "{{ nbc_backup_config_filename }}"
+
+# vim:sw=2:ts=2:et:

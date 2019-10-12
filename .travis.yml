@@ -1,0 +1,14 @@
+---
+sudo: required
+language: python
+services:
+  - docker
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y genisoimage
+install:
+  - pip install tox-travis
+script:
+  - tox
+
+# vim:sw=2:ts=2:et:

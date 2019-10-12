@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+  # TODO
+  # name: podman
+lint:
+  name: yamllint
+platforms:
+  - name: centos-7
+    image: centos:7
+    tmpfs:
+      - /tmp
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  inventory:
+    group_vars:
+      all:
+        nbc_dryrun: true
+
+scenario:
+  name: default
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
+
+# vim:sw=2:ts=2:et:

@@ -1,0 +1,28 @@
+---
+# .. note:: There is no ansible module for F5 Big-IP like ios_config.
+
+- name: Compute timestamp
+  command: date +%F_%H%M%S_%Z
+  changed_when: false
+  register: date_res
+
+- name: Set the backup filename on the remote node
+  set_fact:
+    _ucs_basename: >-
+      {{ inventory_hostname }}_{{ date_res.stdout }}
+
+- name: Backup config on the node
+  bigip_command:
+    commands: >-
+      save sys ucs {{ _ucs_basename }}
+    provider: "{{ bigip_provider }}"
+  delegate_to: localhost
+
+- name: Fetch the backup file
+  bigip_ucs_fetch:
+    src: "{{ _ucs_basename }}.ucs"
+    dest: "{{ _bacup_filepath }}"
+    provider: "{{ bigip_provider }}"
+  delegate_to: localhost
+
+# vim:sw=2:ts=2:et:

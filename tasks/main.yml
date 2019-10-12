@@ -1,0 +1,10 @@
+---
+- include_tasks: pre.yml
+- include_tasks: "{{ nbc_nw_os }}_pre.yml"
+- include_tasks: "{{ nbc_nw_os }}_backup_config.yml"
+  when:
+    - not(nbc_dryrun)
+
+- include_tasks: post.yml
+
+# vim:sw=2:ts=2:et:

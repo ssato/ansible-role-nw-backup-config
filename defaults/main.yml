@@ -1,0 +1,48 @@
+---
+# yamllint disable-line rule:line-length
+# .. note:: https://docs.ansible.com/ansible/latest/network/user_guide/platform_index.html#settings-by-platform
+#
+# - Cisco IOS, Juniper, etc.: see the table above
+# - F5: bigip
+# - Fortinet: fortios
+#
+nbc_nw_os: "{{ ansible_network_os | d() }}"
+
+# .. note::
+#    If true, command to backup config will just be printed instead of
+#    performing backup configurations actuallly.
+nbc_dryrun: false
+
+# .. note::
+#    Use general <network_os>_command such as ios_command instead of probably
+#    more efficient other module such as ios_config, to backup configs.
+nbc_use_command: false
+
+# .. note::
+#    Some network modules support output format option. For example, junos_*
+#    support 'display' option to configure the command output format from text,
+#    json, xml and set.
+#
+nbc_format: set
+
+nbc_backup_config_dir: /tmp/nbc
+nbc_backup_config_filename: >-
+  {{ inventory_hostname }}_cb.out
+
+# Some network os specific variables.
+# - bigip_provider :: {}
+# - fortios_provider :: {}
+#
+bigip_provider:
+  server: "{{ ansible_host }}"
+  user: "{{ ansible_user }}"
+  password: "{{ ansible_ssh_pass }}"
+  transport: cli
+  server_port: 22
+
+fortios_provider:
+  host: "{{ ansible_host }}"
+  username: "{{ ansible_user }}"
+  password: "{{ ansible_ssh_pass }}"
+
+# vim:sw=2:ts=2:et:

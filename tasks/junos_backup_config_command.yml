@@ -1,0 +1,16 @@
+---
+- name: Show running config on the node
+  junos_command:
+    commands: show configuration | no-more
+    display: "{{ nbc_format }}"
+  change_when: false
+  register: res
+
+- name: Dump the configuration
+  copy:
+    dest: "{{ _bacup_filepath }}"
+    content: |
+      {{ res.stdout }}
+  delegate_to: localhost
+
+# vim:sw=2:ts=2:et:

@@ -1,0 +1,16 @@
+---
+- name: Test variables are OK for FortiOS nodes
+  assert:
+    that:
+      - fortios_provider | d()
+      - fortios_provider is mapping
+      - fortios_provider.host | d()
+      - fortios_provider.host is string
+      - fortios_provider.username | d()
+      - fortios_provider.username is string
+      - fortios_provider.password | d()
+      - fortios_provider.password is string
+    fail_msg: |
+      fortios_provider: {{ fortios_provider | d() }}
+
+# vim:sw=2:ts=2:et:

@@ -1,0 +1,35 @@
+---
+- name: Test variables are OK
+  assert:
+    that:
+      - nbc_nw_os | d()
+      - nbc_nw_os is string
+      - nbc_dryrun | d() in [true, false]
+      - nbc_use_command | d() in [true, false]
+      - nbc_format | d()
+      - nbc_format is string
+      - nbc_backup_config_dir | d()
+      - nbc_backup_config_dir is string
+      - nbc_backup_config_filename | d()
+      - nbc_backup_config_filename is string
+    fail_msg: |
+      nbc_nw_os : {{ nbc_nw_os | d() }}
+      nbc_dryrun: {{ nbc_dryrun | d() }}
+      nbc_use_command: {{ nbc_use_command | d() }}
+      nbc_format: {{ nbc_format | d() }}
+      nbc_backup_config_dir: {{ nbc_backup_config_dir | d() }}
+      nbc_backup_config_filename: {{ nbc_backup_config_filename | d() }}
+
+- name: Ensure backup dir exists
+  file:
+    state: directory
+    path: "{{ nbc_backup_config_dir }}"
+  when:
+    - not(nbc_dryrun)
+
+- name: Set the backup file path
+  set_fact:
+    _bacup_filepath: >-
+      {{ nbc_backup_config_dir }}/{{ nbc_backup_config_filename }}
+
+# vim:sw=2:ts=2:et:
