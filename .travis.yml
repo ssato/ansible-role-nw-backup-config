@@ -18,6 +18,7 @@ services:
 before_install:
   - sudo apt-get -qq update
 install:
+  - pip install -U pip-tools
   - pip install tox-travis
 script:
   - tox
