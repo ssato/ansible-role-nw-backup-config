@@ -13,9 +13,4 @@
     fail_msg: |
       bigip_provider: {{ bigip_provider | d() }}
 
-- name: Debug variables
-  debug:
-    var: bigip_provider
-    verbosity: 1
-
 # vim:sw=2:ts=2:et:
