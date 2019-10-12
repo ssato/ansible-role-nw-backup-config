@@ -12,4 +12,4 @@ bigsuds
 pyfg
 fortiosapi
 # Junos
-ncclient >= 0.5.2
+ncclient
