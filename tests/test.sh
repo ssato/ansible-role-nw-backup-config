@@ -5,6 +5,8 @@ set -ex
 # <host_group>:<inventory_file>
 INVENTORIES="${@:-\
 cisco:$HOME/Desktop/t/rhpds/nw/hosts
+juniper:$HOME/Desktop/t/rhpds/nw/hosts
+arista:$HOME/Desktop/t/rhpds/nw/hosts
 lb:$HOME/Desktop/t/rhpds/f5/hosts
 }"
 

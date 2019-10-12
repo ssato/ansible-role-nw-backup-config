@@ -16,7 +16,7 @@ cache: pip
 services:
   - docker
 before_install:
-  # - sudo apt-get -qq update
+  - sudo apt-get -qq update
   - pip install -U pip-tools
 install:
   - pip install tox-travis
