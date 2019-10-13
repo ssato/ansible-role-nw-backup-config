@@ -6,7 +6,7 @@ This is an example ansible role to backup configuration files on network nodes.
 How to get the role ID:
 ansible-galaxy info ssato.generate_kickstart | sed -nr "s/[[:blank:]]+id: ([[:digit:]]+)/\1/p"
 -->
-[![Build Status](https://img.shields.io/travis/ssato/ansible-role-nw-backup-config.png)](https://travis-ci.org/ssato/ansible-role-nw-backup-config) <!-- [![Ansible Galaxy](https://img.shields.io/ansible/role/43954.svg)](https://galaxy.ansible.com/ssato/nw_backup_config) -->
+[![Build Status](https://img.shields.io/travis/ssato/ansible-role-nw-backup-config.png)](https://travis-ci.org/ssato/ansible-role-nw-backup-config) [![Ansible Galaxy](https://img.shields.io/ansible/role/43970.svg)](https://galaxy.ansible.com/ssato/nw_backup_config)
 
 ## Notes
 
