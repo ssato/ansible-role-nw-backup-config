@@ -39,6 +39,7 @@ bigip_provider:
   password: "{{ ansible_ssh_pass }}"
   transport: cli
   server_port: 22
+  # validate_certs: false
 
 fortios_provider:
   host: "{{ ansible_host }}"
