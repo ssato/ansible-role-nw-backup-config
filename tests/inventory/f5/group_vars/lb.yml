@@ -1,0 +1,19 @@
+---
+nbc_nw_os: bigip
+nbc_dryrun: false
+nbc_use_command: false
+
+nbc_backup_config_dir: /tmp/nbc/f5
+nbc_backup_config_filename: >-
+  {{ inventory_hostname }}_cb.out
+
+bigip_provider:
+  server: "{{ ansible_host }}"
+  user: "{{ ansible_user }}"
+  password: "{{ ansible_ssh_pass }}"
+  transport: rest
+  # server_port: 22
+  server_port: 80
+  validate_certs: false
+
+# vim:sw=2:ts=2:et:

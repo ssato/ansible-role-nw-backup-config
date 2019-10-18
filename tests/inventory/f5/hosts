@@ -1,0 +1,7 @@
+[all:vars]
+ansible_user=student1
+ansible_ssh_pass=*************
+ansible_port=22
+
+[lb]
+f5 ansible_host=xxx.xxx.xxx.xxx ansible_user=admin ansible_ssh_pass=************ ansible_connection=local

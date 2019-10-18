@@ -1,0 +1,11 @@
+---
+# nbc_nw_os: "{{ ansible_network_os | d() }}"
+# nbc_dryrun: false
+# nbc_use_command: false
+# nbc_format: set
+
+nbc_backup_config_dir: /tmp/nbc/nw
+# nbc_backup_config_filename: >-
+#  {{ inventory_hostname }}_cb.out
+
+# vim:sw=2:ts=2:et:
