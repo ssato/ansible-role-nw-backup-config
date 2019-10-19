@@ -1,0 +1,16 @@
+---
+- name: Backup config on the node
+  iosxr_config:
+    backup: true
+    backup_options:
+      filename: "{{ nbc_backup_config_filename }}"
+      dir_path: "{{ nbc_backup_config_dir }}"
+  when:
+    - not(nbc_use_command)
+
+# Alternative way using ios_command
+- include_tasks: "{{ nbc_nw_os }}_backup_config_command.yml"
+  when:
+    - nbc_use_command
+
+# vim:sw=2:ts=2:et:
