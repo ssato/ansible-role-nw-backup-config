@@ -14,7 +14,7 @@ I don't have enough network nodes and tests are very limited.
 
 - Tested and confirmed it works: Cisco (ios), Arista (eos), Juniper (junos)
 - Tested but don't confirm it works yet: F5 Big-IP (bigip)
-- Not tested: FortiOS (fortios)
+- Not tested: FortiOS (fortios), Cisco (iosxr)
 
 ## Requirements
 
