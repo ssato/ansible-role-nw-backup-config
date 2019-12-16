@@ -1,0 +1,34 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: delegated
+  options:
+    managed: false
+    login_cmd_template: ''
+    ansible_connection_options:
+      ansible_connection: netconf
+      ansible_network_os: junos
+      ansible_user: "{{ lookup('env', 'JUNOS_USER') }}"
+      ansible_ssh_pass: "{{ lookup('env', 'JUNOS_PASS') }}"
+      ansible_host: "{{ lookup('env', 'JUNOS_HOST') }}"
+      ansible_ssh_port: "{{ lookup('env', 'JUNOS_PORT') }}"
+lint:
+  name: yamllint
+platforms:
+  - name: instance
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  inventory:
+    group_vars:
+      all:
+        nbc_backup_config_dir: /tmp/nbc
+        nbc_backup_config_filename: test_cb.out
+verifier:
+  name: ansible
+  lint:
+    name: ansible-lint
+
+# vim:sw=2:ts=2:et:

@@ -1,0 +1,9 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Test if config backup file exists
+      command: >-
+        test -f {{ nbc_backup_config_dir }}/{{ nbc_backup_config_filename }}
+      changed_when: false

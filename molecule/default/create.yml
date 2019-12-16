@@ -1,0 +1,6 @@
+---
+- name: Create
+  hosts: all
+  gather_facts: false
+  no_log: "{{ molecule_no_log }}"
+  tasks: []

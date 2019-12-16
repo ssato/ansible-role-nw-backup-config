@@ -22,7 +22,7 @@ provisioner:
         nbc_dryrun: true
 
 scenario:
-  name: default
+  name: localhost
 verifier:
   name: testinfra
   lint:
