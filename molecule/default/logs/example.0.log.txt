@@ -1,0 +1,145 @@
+ssato@x1-carbon-gen6% molecule lint                                                          ~/repos/public/github.com/ssato/ansible-role-nw-backup-config.git
+--> Validating schema /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/localhost/molecule.yml.
+Validation completed successfully.
+--> Validating schema /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/molecule.yml.
+Validation completed successfully.
+--> Test matrix
+
+└── default
+    ├── dependency
+    └── lint
+
+--> Scenario: 'default'
+--> Action: 'dependency'
+Skipping, missing the requirements file.
+--> Scenario: 'default'
+--> Action: 'lint'
+--> Executing Yamllint on files found in /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/...
+Lint completed successfully.
+--> Executing Ansible Lint on /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/verify.yml...
+Lint completed successfully.
+--> Executing Ansible Lint on /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/playbook.yml...
+Lint completed successfully.
+ssato@x1-carbon-gen6%                                                                        ~/repos/public/github.com/ssato/ansible-role-nw-backup-config.git
+ssato@x1-carbon-gen6% molecule test                                                          ~/repos/public/github.com/ssato/ansible-role-nw-backup-config.git
+--> Validating schema /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/localhost/molecule.yml.
+Validation completed successfully.
+--> Validating schema /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/molecule.yml.
+Validation completed successfully.
+--> Test matrix
+
+└── default
+    ├── dependency
+    ├── lint
+    ├── cleanup
+    ├── destroy
+    ├── syntax
+    ├── create
+    ├── prepare
+    ├── converge
+    ├── idempotence
+    ├── side_effect
+    ├── verify
+    ├── cleanup
+    └── destroy
+
+--> Scenario: 'default'
+--> Action: 'dependency'
+Skipping, missing the requirements file.
+--> Scenario: 'default'
+--> Action: 'lint'
+--> Executing Yamllint on files found in /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/...
+Lint completed successfully.
+--> Executing Ansible Lint on /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/verify.yml...
+Lint completed successfully.
+--> Executing Ansible Lint on /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/playbook.yml...
+Lint completed successfully.
+--> Scenario: 'default'
+--> Action: 'cleanup'
+Skipping, cleanup playbook not configured.
+--> Scenario: 'default'
+--> Action: 'destroy'
+Skipping, instances are delegated.
+--> Scenario: 'default'
+--> Action: 'syntax'
+
+    playbook: /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/playbook.yml
+--> Scenario: 'default'
+--> Action: 'create'
+Skipping, instances are delegated.
+--> Scenario: 'default'
+--> Action: 'prepare'
+Skipping, prepare playbook not configured.
+--> Scenario: 'default'
+--> Action: 'converge'
+
+    PLAY [Converge] ****************************************************************
+
+    TASK [ssato.nw_backup_config : include_tasks] **********************************
+    included: /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/tasks/pre.yml for instance
+
+    TASK [ssato.nw_backup_config : Test variables are OK] **************************
+    ok: [instance] => {
+        "changed": false,
+        "msg": "All assertions passed"
+    }
+
+    TASK [ssato.nw_backup_config : Ensure backup dir exists] ***********************
+[WARNING]: Platform linux on host instance is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+
+    ok: [instance]
+
+    TASK [ssato.nw_backup_config : Set the backup file path] ***********************
+    ok: [instance]
+
+    TASK [ssato.nw_backup_config : include_tasks] **********************************
+
+    TASK [ssato.nw_backup_config : include_tasks] **********************************
+    included: /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/tasks/junos_backup_config.yml for instance
+
+    TASK [ssato.nw_backup_config : Backup config on the node] **********************
+    ok: [instance]
+
+    TASK [ssato.nw_backup_config : include_tasks] **********************************
+    skipping: [instance]
+
+    TASK [ssato.nw_backup_config : include_tasks] **********************************
+
+    PLAY RECAP *********************************************************************
+    instance                   : ok=6    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+--> Scenario: 'default'
+--> Action: 'idempotence'
+Idempotence completed successfully.
+--> Scenario: 'default'
+--> Action: 'side_effect'
+Skipping, side effect playbook not configured.
+--> Scenario: 'default'
+--> Action: 'verify'
+--> Running Ansible Verifier
+
+    PLAY [Verify] ******************************************************************
+
+    TASK [Test if config backup file exists] ***************************************
+[WARNING]: Platform linux on host instance is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+
+    ok: [instance]
+
+    PLAY RECAP *********************************************************************
+    instance                   : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+Verifier completed successfully.
+--> Scenario: 'default'
+--> Action: 'cleanup'
+Skipping, cleanup playbook not configured.
+--> Scenario: 'default'
+--> Action: 'destroy'
+Skipping, instances are delegated.
+--> Pruning extra files from scenario ephemeral directory
+ssato@x1-carbon-gen6%                                                                        ~/repos/public/github.com/ssato/ansible-role-nw-backup-config.git
