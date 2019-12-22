@@ -1,0 +1,18 @@
+---
+ansible_user: "{{ lookup('env', 'JUNIPER_USER') }}"
+ansible_ssh_pass: "{{ lookup('env', 'JUNIPER_PASS') }}"
+ansible_host: "{{ lookup('env', 'JUNIPER_HOST') }}"
+ansible_ssh_port: "{{ lookup('env', 'JUNIPER_PORT') }}"
+
+# nbc_nw_os: "{{ ansible_network_os | d() }}"
+# nbc_dryrun: false
+# nbc_use_command: false
+# nbc_format: set
+
+# nbc_backup_config_filename: >-
+#  {{ inventory_hostname }}_cb.out
+nbc_backup_config_dir: /tmp/nbc/juniper/
+nbc_backup_config_filename: >-
+  {{ inventory_hostname }}.out
+
+# vim:sw=2:ts=2:et:

@@ -1,0 +1,6 @@
+---
+# If you want to override them defined in group_vars/*.yml.
+# ansible_host: "{{ lookup('env', 'JUNIPER_HOST') }}"
+# ansible_ssh_port: "{{ lookup('env', 'JUNIPER_PORT') }}"
+
+# vim:sw=2:ts=2:et:

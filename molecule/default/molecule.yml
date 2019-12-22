@@ -3,29 +3,23 @@ dependency:
   name: galaxy
 driver:
   name: delegated
-  options:
-    managed: false
-    login_cmd_template: ''
-    ansible_connection_options:
-      ansible_connection: netconf
-      ansible_network_os: junos
-      ansible_user: "{{ lookup('env', 'JUNOS_USER') }}"
-      ansible_ssh_pass: "{{ lookup('env', 'JUNOS_PASS') }}"
-      ansible_host: "{{ lookup('env', 'JUNOS_HOST') }}"
-      ansible_ssh_port: "{{ lookup('env', 'JUNOS_PORT') }}"
 lint:
   name: yamllint
 platforms:
-  - name: instance
+  # .. seealso:: ../../tests/inventory/juniper_vlabs/hosts
+  - name: vmx01
+
+# .. seealso::
+# https://molecule.readthedocs.io/en/stable/configuration.html#id22
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
   inventory:
-    group_vars:
-      all:
-        nbc_backup_config_dir: /tmp/nbc
-        nbc_backup_config_filename: test_cb.out
+    links:
+      hosts: ../../tests/inventory/juniper_vlabs/hosts
+      group_vars: ../../tests/inventory/juniper_vlabs/group_vars
+      host_vars: ../../tests/inventory/juniper_vlabs/host_vars
 verifier:
   name: ansible
   lint:
