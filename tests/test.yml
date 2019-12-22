@@ -1,7 +1,0 @@
----
-- hosts: "{{ _hosts }}"
-  gather_facts: false
-  roles:
-    - ssato.nw_backup_config
-
-# vim:sw=2:ts=2:et:

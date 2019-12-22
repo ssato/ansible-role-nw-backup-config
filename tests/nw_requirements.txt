@@ -1,0 +1,9 @@
+# F5 Big-IP
+# .. seealso::
+#    https://clouddocs.f5.com/training/community/gsts/html/class1/module1/lab02.html
+f5-sdk
+bigsuds
+# FortiOS
+# Skip to avoid 'ImportError: No module named pip.req' error.
+# pyfg
+fortiosapi
