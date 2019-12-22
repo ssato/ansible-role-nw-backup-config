@@ -2,5 +2,16 @@
 - name: Create
   hosts: all
   gather_facts: false
-  no_log: "{{ molecule_no_log }}"
-  tasks: []
+  # no_log: "{{ molecule_no_log }}"
+  tasks:
+    - name: Make up ssh-keyscan command strings
+      set_fact:
+        ssh_keyscan_cmd: >-
+          ssh-keyscan -H -p {{ ansible_ssh_port }} {{ ansible_host }}
+
+    - name: Ensure all hosts found in ~/.ssh/known_hosts
+      known_hosts:
+        name: "{{ ansible_host }}"
+        key: "{{ lookup('pipe', ssh_keyscan_cmd) }}"
+
+# vim:sw=2:ts=2:et:
