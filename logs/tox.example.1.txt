@@ -1,0 +1,210 @@
+ssato@x1-carbon-gen6% cat ../junos_env.sh                                                    ~/repos/public/github.com/ssato/ansible-role-nw-backup-config.git
+export JUNIPER_USER=********
+export JUNIPER_PASS='*********'
+export JUNIPER_HOST=66.12x.xxx.xxx
+export JUNIPER_PORT=3xxxxx
+ssato@x1-carbon-gen6% source ../junos_env.sh                                                 ~/repos/public/github.com/ssato/ansible-role-nw-backup-config.git
+ssato@x1-carbon-gen6% tox -e py37-juniper                                                    ~/repos/public/github.com/ssato/ansible-role-nw-backup-config.git
+py37-juniper installed: ansible==2.9.2,ansible-lint==4.2.0,anyconfig==0.9.7,arrow==0.15.4,aspy.yaml==1.3.0,attrs==19.3.0,bcrypt==3.1.7,binaryornot==0.4.4,Cerberus==1.3.2,certifi==2019.11.28,cffi==1.13.2,cfgv==2.0.1,chardet==3.0.4,Click==7.0,click-completion==0.5.2,colorama==0.4.3,cookiecutter==1.7.0,cryptography==2.8,entrypoints==0.3,fasteners==0.15,flake8==3.7.9,future==0.18.2,git-url-parse==1.2.2,identify==1.4.8,idna==2.8,importlib-metadata==1.3.0,Jinja2==2.10.3,jinja2-time==0.2.0,lxml==4.4.2,MarkupSafe==1.1.1,mccabe==0.6.1,molecule==2.22,monotonic==1.5,more-itertools==8.0.2,ncclient==0.6.7,nodeenv==1.3.3,packaging==19.2,paramiko==2.7.1,pathspec==0.6.0,pbr==5.4.4,pexpect==4.7.0,pluggy==0.13.1,poyo==0.5.0,pre-commit==1.20.0,psutil==5.6.7,ptyprocess==0.6.0,py==1.8.0,pycodestyle==2.5.0,pycparser==2.19,pyflakes==2.1.1,PyNaCl==1.3.0,pyparsing==2.4.5,pytest==5.3.2,python-dateutil==2.8.1,python-gilt==1.2.1,PyYAML==5.2,requests==2.22.0,ruamel.yaml==0.16.5,ruamel.yaml.clib==0.2.0,sh==1.12.14,shellingham==1.3.1,six==1.13.0,tabulate==0.8.6,testinfra==3.3.0,toml==0.10.0,tree-format==0.1.2,urllib3==1.25.7,virtualenv==16.7.9,wcwidth==0.1.7,whichcraft==0.6.1,yamllint==1.19.0,zipp==0.6.0
+py37-juniper run-test-pre: PYTHONHASHSEED='2121231922'
+py37-juniper run-test-pre: commands[0] | - git clone https://github.com/sstephenson/bats.git /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/.tox/bats
+fatal: destination path '.tox/bats' already exists and is not an empty directory.
+py37-juniper run-test-pre: commands[1] | /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/.tox/bats/install.sh /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/.tox
+Installed Bats to .tox/bin/bats
+py37-juniper run-test: commands[0] | molecule test
+--> Validating schema /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/localhost/molecule.yml.
+Validation completed successfully.
+--> Validating schema /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/molecule.yml.
+Validation completed successfully.
+--> Test matrix
+
+└── default
+    ├── lint
+    ├── dependency
+    ├── cleanup
+    ├── destroy
+    ├── syntax
+    ├── create
+    ├── prepare
+    ├── converge
+    ├── idempotence
+    ├── side_effect
+    ├── verify
+    ├── cleanup
+    └── destroy
+
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'lint'
+--> Executing Yamllint on files found in /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/...
+Lint completed successfully.
+--> Executing Ansible Lint on /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/verify.yml...
+Lint completed successfully.
+--> Executing Ansible Lint on /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/playbook.yml...
+Lint completed successfully.
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'dependency'
+Skipping, missing the requirements file.
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'cleanup'
+Skipping, cleanup playbook not configured.
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'destroy'
+
+    PLAY [Destroy] *****************************************************************
+
+    PLAY RECAP *********************************************************************
+
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'syntax'
+
+    playbook: /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/playbook.yml
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'create'
+
+    PLAY [Create] ******************************************************************
+
+    TASK [Make up ssh-keyscan command strings] *************************************
+    ok: [vmx01]
+
+    TASK [Ensure all hosts found in ~/.ssh/known_hosts] ****************************
+# 66.12x.xxx.xxx:3xxxxx SSH-2.0-OpenSSH_7.2
+# 66.12x.xxx.xxx:3xxxxx SSH-2.0-OpenSSH_7.2
+# 66.12x.xxx.xxx:3xxxxx SSH-2.0-OpenSSH_7.2
+[WARNING]: Platform linux on host vmx01 is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+
+    ok: [vmx01]
+
+    PLAY RECAP *********************************************************************
+    vmx01                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'prepare'
+Skipping, prepare playbook not configured.
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'converge'
+
+    PLAY [Converge] ****************************************************************
+
+    TASK [ssato.nw_backup_config : include_tasks] **********************************
+    included: /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/tasks/pre.yml for vmx01
+
+    TASK [ssato.nw_backup_config : Test variables are OK] **************************
+    ok: [vmx01] => {
+        "changed": false,
+        "msg": "All assertions passed"
+    }
+
+    TASK [ssato.nw_backup_config : Ensure backup dir exists] ***********************
+[WARNING]: Platform linux on host vmx01 is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+
+    ok: [vmx01]
+
+    TASK [ssato.nw_backup_config : Set the backup file path] ***********************
+    ok: [vmx01]
+
+    TASK [ssato.nw_backup_config : include_tasks] **********************************
+
+    TASK [ssato.nw_backup_config : include_tasks] **********************************
+    included: /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/tasks/junos_backup_config.yml for vmx01
+
+    TASK [ssato.nw_backup_config : Backup config on the node] **********************
+    ok: [vmx01]
+
+    TASK [ssato.nw_backup_config : include_tasks] **********************************
+    skipping: [vmx01]
+
+    TASK [ssato.nw_backup_config : include_tasks] **********************************
+
+    PLAY RECAP *********************************************************************
+    vmx01                      : ok=6    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'idempotence'
+Idempotence completed successfully.
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'side_effect'
+Skipping, side effect playbook not configured.
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'verify'
+--> Running Ansible Verifier
+
+    PLAY [Verify] ******************************************************************
+
+    TASK [Test if config backup file exists] ***************************************
+[WARNING]: Platform linux on host vmx01 is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+
+    ok: [vmx01]
+
+    PLAY RECAP *********************************************************************
+    vmx01                      : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+Verifier completed successfully.
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'cleanup'
+Skipping, cleanup playbook not configured.
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/hosts linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/hosts
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/group_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/group_vars
+--> Inventory /home/ssato/repos/public/github.com/ssato/ansible-role-nw-backup-config.git/molecule/default/../../tests/inventory/juniper_vlabs/host_vars linked to /home/ssato/.cache/molecule/ansible-role-nw-backup-config.git/default/inventory/host_vars
+--> Scenario: 'default'
+--> Action: 'destroy'
+
+    PLAY [Destroy] *****************************************************************
+
+    PLAY RECAP *********************************************************************
+
+--> Pruning extra files from scenario ephemeral directory
+py37-juniper run-test: commands[1] | bats tests/main.bats
+ ✓ Lint all yaml files
+ ✓ Check styles of all playbook files
+ ✓ Test applying the role
+
+3 tests, 0 failures
+___________________________________________________________________________ summary ___________________________________________________________________________
+  py37-juniper: commands succeeded
+  congratulations :)
+ssato@x1-carbon-gen6%                                                                        ~/repos/public/github.com/ssato/ansible-role-nw-backup-config.git
