@@ -9,7 +9,8 @@ yamllint
 f5-sdk
 bigsuds
 # FortiOS
-pyfg
+# Skip to avoid 'ImportError: No module named pip.req' error.
+# pyfg
 fortiosapi
 # Junos
 ncclient
